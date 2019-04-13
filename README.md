@@ -8,8 +8,12 @@
 # Install dependencies
 npm install
 
+# Install dependencies
+pipenv install
+
 # Serve API on localhost:8000
-python leadmanager/manage.py runserver
+cd leadmanager
+pipenv run manage.py runserver
 
 # Run webpack (from root)
 npm run dev
