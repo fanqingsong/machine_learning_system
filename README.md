@@ -13,7 +13,7 @@ pipenv install
 
 # Serve API on localhost:8000
 cd leadmanager
-pipenv run manage.py runserver
+pipenv run python manage.py runserver
 
 # Run webpack (from root)
 npm run dev
