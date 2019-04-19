@@ -7,13 +7,15 @@ from .serializers import UserSerializer, RegisterSerializer, LoginSerializer
 class RegisterAPI(generics.GenericAPIView):
   serializer_class = RegisterSerializer
 
+  # bug fix: TypeError: Object of type AuthToken is not JSON serializable
+  # https://stackoverflow.com/questions/55668375/object-of-type-authtoken-is-not-json-serializable
   def post(self, request, *args, **kwargs):
     serializer = self.get_serializer(data=request.data)
     serializer.is_valid(raise_exception=True)
     user = serializer.save()
     return Response({
       "user": UserSerializer(user, context=self.get_serializer_context()).data,
-      "token": AuthToken.objects.create(user)
+      "token": AuthToken.objects.create(user)[1]
     })
 
 # Login API
@@ -26,7 +28,7 @@ class LoginAPI(generics.GenericAPIView):
     user = serializer.validated_data
     return Response({
       "user": UserSerializer(user, context=self.get_serializer_context()).data,
-      "token": AuthToken.objects.create(user)
+      "token": AuthToken.objects.create(user)[1]
     })
 
 # Get User API
