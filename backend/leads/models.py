@@ -9,3 +9,6 @@ class Lead(models.Model):
     owner = models.ForeignKey(
         User, related_name="leads", on_delete=models.CASCADE, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def __unicode__(self):
+        return self.name

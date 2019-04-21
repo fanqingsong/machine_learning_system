@@ -1,8 +1,8 @@
-# Lead Manager
+# Machine Learning System
 
 > Full stack Django/React/Redux app that uses token based authentication with Knox.
+> Add Machine Learning elements.
 
-Note: base on this project, i will revise it to a machine learning system.
 
 ## Quick Start
 
