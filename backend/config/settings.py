@@ -57,12 +57,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'leadmanager.urls'
+ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [ os.path.join(BASE_DIR, 'frontend/dist') ],
+        'DIRS': [ os.path.join(BASE_DIR, '../frontend/dist') ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -75,7 +75,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'leadmanager.wsgi.application'
+WSGI_APPLICATION = 'config.wsgi.application'
 
 
 # Database
@@ -129,5 +129,5 @@ STATIC_URL = '/static/'
 
 # Place static in the same location as webpack build files
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'frontend', 'dist'),
+    os.path.join(BASE_DIR, '../frontend/dist/static')
 ]

@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development --watch ./leadmanager/frontend/src/index.js --output ./leadmanager/frontend/main.js",
-    "build": "webpack --mode production ./leadmanager/frontend/src/index.js --output ./leadmanager/frontend/dist/main.js"
+    "build": "webpack --mode production"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +15,11 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "copy-webpack-plugin": "^4.0.1",
+    "file-loader": "^3.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "rmrf": "^2.0.0",
+    "url-loader": "^1.1.2",
     "webpack": "^4.29.0",
     "webpack-cli": "^3.2.1"
   },
