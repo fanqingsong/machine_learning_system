@@ -2,7 +2,7 @@ import axios from "axios";
 import { createMessage, returnErrors } from "./messages";
 import { tokenConfig } from "./auth";
 
-import { GET_IRIS_DATA, DELETE_ONE_IRIS, ADD_ONE_IRIS } from "./types";
+import { GET_IRIS_DATA, DELETE_ONE_IRIS, UPDATE_ONE_IRIS, ADD_ONE_IRIS, SET_EDIT_IRIS } from "./types";
 
 // GET IRIS DATA
 export const getIris = () => (dispatch, getState) => {
@@ -28,6 +28,28 @@ export const deleteOneIris = id => (dispatch, getState) => {
       dispatch({
         type: DELETE_ONE_IRIS,
         payload: id
+      });
+    })
+    .catch(err => console.log(err));
+};
+
+export const setEditedIris = iris => (dispatch, getState) => {
+  console.log("setEditedIris called");
+  dispatch({
+    type: SET_EDIT_IRIS,
+    payload: iris
+  })
+}
+
+// UPDATE one iris
+export const updateOneIris = iris => (dispatch, getState) => {
+  axios
+    .put(`/api/iris/${iris.id}/`, iris, tokenConfig(getState))
+    .then(res => {
+      dispatch(createMessage({ updateOneIris: "iris Updated" }));
+      dispatch({
+        type: UPDATE_ONE_IRIS,
+        payload: iris
       });
     })
     .catch(err => console.log(err));

@@ -1,7 +1,14 @@
-import { GET_IRIS_DATA, DELETE_ONE_IRIS, ADD_ONE_IRIS, CLEAR_IRIS_DATA } from "../actions/types.js";
+import { GET_IRIS_DATA, DELETE_ONE_IRIS, SET_EDIT_IRIS, UPDATE_ONE_IRIS, ADD_ONE_IRIS, CLEAR_IRIS_DATA } from "../actions/types.js";
 
 const initialState = {
-  iris: []
+  iris: [],
+  editedIris: {
+    sepal_len: "",
+    sepal_width: "",
+    petal_len: "",
+    petal_width: "",
+    category: ""
+  }
 };
 
 export default function (state = initialState, action) {
@@ -15,6 +22,23 @@ export default function (state = initialState, action) {
       return {
         ...state,
         iris: state.iris.filter(one_iris => one_iris.id !== action.payload)
+      };
+    case SET_EDIT_IRIS:
+      console.log("in reducer SET_EDIT_IRIS is called");
+      return {
+        ...state,
+        editedIris: action.payload
+      };
+    case UPDATE_ONE_IRIS:
+      return {
+        ...state,
+        iris: state.iris.map(one_iris => {
+                  if ( one_iris.id !== action.payload.id ) {
+                    return one_iris;
+                  } else {
+                    return action.payload;
+                  }
+                })
       };
     case ADD_ONE_IRIS:
       return {
