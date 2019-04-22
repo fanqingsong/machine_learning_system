@@ -58,10 +58,10 @@ export class Header extends Component {
             {isAuthenticated ? authLinks : guestLinks}
           </nav>
 
-          <Nav variant="pills" defaultActiveKey="Previlage">
+          <Nav variant="pills" defaultActiveKey="data">
             <Nav.Item>
-              <Nav.Link eventKey="Previlage" href="#/">
-                Previlage
+              <Nav.Link eventKey="data" href="#/">
+                data(iris)
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>

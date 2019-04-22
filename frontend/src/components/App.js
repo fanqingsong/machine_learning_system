@@ -11,7 +11,7 @@ import { Provider as AlertProvider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
 
 import Header from "./layout/Header";
-import Dashboard from "./leads/Dashboard";
+import Dashboard from "./iris/Dashboard";
 import Train from "./train";
 import Application from "./application";
 import Alerts from "./layout/Alerts";

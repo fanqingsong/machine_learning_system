@@ -11,7 +11,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # lead user management api
-    path('', include('leads.urls')),
+    path('', include('iris.urls')),
 
     # for login logout function api
     path('', include('accounts.urls')),

@@ -1,12 +1,12 @@
 import React, { Fragment } from "react";
 import Form from "./Form";
-import Leads from "./Leads";
+import List from "./List";
 
-export default function Dashboard() {
+export default function () {
   return (
     <Fragment>
       <Form />
-      <Leads />
+      <List />
     </Fragment>
   );
 }
