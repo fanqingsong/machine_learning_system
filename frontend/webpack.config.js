@@ -41,6 +41,16 @@ module.exports = {
           loader: "babel-loader"
         }
       },
+      // the next regex tells webpack to use style-loader and css-loader
+      // (notice the chaining through the '!' syntax)
+      // on all css files
+      {
+          test: /\.css$/,
+          use: {
+            loader: "style-loader",
+            loader: "css-loader",
+          }
+      },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',

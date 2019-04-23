@@ -61,7 +61,12 @@ export class Header extends Component {
           <Nav variant="pills" defaultActiveKey="data">
             <Nav.Item>
               <Nav.Link eventKey="data" href="#/">
-                data(iris)
+                Data(iris)
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="Explore" title="Item" href="#/explore">
+                Explore
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>

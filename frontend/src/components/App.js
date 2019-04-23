@@ -12,6 +12,7 @@ import AlertTemplate from "react-alert-template-basic";
 
 import Header from "./layout/Header";
 import Dashboard from "./iris/Dashboard";
+import Explore from "./explore";
 import Train from "./train";
 import Application from "./application";
 import Alerts from "./layout/Alerts";
@@ -45,6 +46,7 @@ class App extends Component {
               <div className="container">
                 <Switch>
                   <PrivateRoute exact path="/" component={Dashboard} />
+                  <PrivateRoute exact path="/explore" component={Explore} />
                   <PrivateRoute exact path="/train" component={Train} />
                   <PrivateRoute exact path="/application" component={Application} />
                   <Route exact path="/register" component={Register} />
