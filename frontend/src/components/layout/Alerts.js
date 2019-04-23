@@ -22,8 +22,9 @@ export class Alerts extends Component {
     }
 
     if (message !== prevProps.message) {
-      if (message.deleteLead) alert.success(message.deleteLead);
-      if (message.addLead) alert.success(message.addLead);
+      if (message.addOneIris) alert.success(message.addOneIris);
+      if (message.updateOneIris) alert.success(message.updateOneIris);
+      if (message.deleteOneIris) alert.success(message.deleteOneIris);
       if (message.passwordNotMatch) alert.error(message.passwordNotMatch);
     }
   }

@@ -60,7 +60,10 @@ export const addOneIris = iris => (dispatch, getState) => {
   axios
     .post("/api/iris/", iris, tokenConfig(getState))
     .then(res => {
+      console.log("add one iris success", res.data);
+
       dispatch(createMessage({ addOneIris: "iris Added" }));
+      
       dispatch({
         type: ADD_ONE_IRIS,
         payload: res.data

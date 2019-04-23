@@ -7,35 +7,35 @@ export class Form extends Component {
   static propTypes = {
     addOneIris: PropTypes.func.isRequired,
     updateOneIris: PropTypes.func.isRequired,
+    setEditedIris: PropTypes.func.isRequired,
   };
 
   onChange = e => {
-    console.log("on change");
-    console.log(e.target.name);
-    console.log(e.target.value);
-    console.log("----", this.props.editedIris[e.target.name])
     this.props.editedIris[e.target.name] = e.target.value;
-    console.log("----", this.props.editedIris[e.target.name])
+    let editedIris = {...this.props.editedIris}
+    editedIris[e.target.name] = e.target.value;
+    this.props.setEditedIris(editedIris);
   }
 
   onSubmit = e => {
     e.preventDefault();
     const { sepal_len, sepal_width, petal_len, petal_width, category } = this.props.editedIris;
     const iris = { sepal_len, sepal_width, petal_len, petal_width, category };
+
     if (this.props.editedIris.id) {
       iris['id'] = this.props.editedIris.id;
       this.props.updateOneIris(iris);
     } else {
       this.props.addOneIris(iris);
     }
-    //this.props.setEditedIris(null);
-    // this.setState({
-    //   sepal_len: "",
-    //   sepal_width: "",
-    //   petal_len: "",
-    //   petal_width: "",
-    //   category: ""
-    // });
+    
+    this.props.setEditedIris({
+      sepal_len: "",
+      sepal_width: "",
+      petal_len: "",
+      petal_width: "",
+      category: ""
+    });
   };
 
   render() {

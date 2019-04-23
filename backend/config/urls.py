@@ -10,7 +10,7 @@ urlpatterns = [
     # administrator page
     path('admin/', admin.site.urls),
 
-    # lead user management api
+    # iris user management api
     path('', include('iris.urls')),
 
     # for login logout function api

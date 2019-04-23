@@ -1,5 +1,5 @@
 """
-WSGI config for leadmanager project.
+WSGI config for iris manager project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
