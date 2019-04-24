@@ -75,8 +75,8 @@ export class Header extends Component {
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link eventKey="Application" title="Item" href="#/application">
-                Application
+              <Nav.Link eventKey="Predict" title="Item" href="#/predict">
+                Predict
               </Nav.Link>
             </Nav.Item>
           </Nav>

@@ -14,7 +14,7 @@ import Header from "./layout/Header";
 import Dashboard from "./iris/Dashboard";
 import Explore from "./explore";
 import Train from "./train";
-import Application from "./application";
+import Predict from "./predict";
 import Alerts from "./layout/Alerts";
 import Login from "./accounts/Login";
 import Register from "./accounts/Register";
@@ -48,7 +48,7 @@ class App extends Component {
                   <PrivateRoute exact path="/" component={Dashboard} />
                   <PrivateRoute exact path="/explore" component={Explore} />
                   <PrivateRoute exact path="/train" component={Train} />
-                  <PrivateRoute exact path="/application" component={Application} />
+                  <PrivateRoute exact path="/predict" component={Predict} />
                   <Route exact path="/register" component={Register} />
                   <Route exact path="/login" component={Login} />
                 </Switch>
