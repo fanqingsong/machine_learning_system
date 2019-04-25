@@ -26,6 +26,7 @@
     "webpack-cli": "^3.2.1"
   },
   "dependencies": {
+    "@data-ui/histogram": "^0.0.78",
     "axios": "^0.18.0",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
