@@ -2,7 +2,7 @@ import axios from "axios";
 import { createMessage, returnErrors } from "./messages";
 import { tokenConfig } from "./auth";
 
-import { GET_IRIS_DATA, DELETE_ONE_IRIS, UPDATE_ONE_IRIS, ADD_ONE_IRIS, SET_EDIT_IRIS } from "./types";
+import { GET_IRIS_DATA, DELETE_ONE_IRIS, UPDATE_ONE_IRIS, ADD_ONE_IRIS, SET_EDIT_IRIS, SET_EDIT_IRIS_CLUSTER } from "./types";
 
 // GET IRIS DATA
 export const getIris = () => (dispatch, getState) => {
@@ -40,6 +40,16 @@ export const setEditedIris = iris => (dispatch, getState) => {
     payload: iris
   })
 }
+
+
+export const setIrisCluster = irisCluster => (dispatch, getState) => {
+  console.log("setIrisCluster called");
+  dispatch({
+    type: SET_EDIT_IRIS_CLUSTER,
+    payload: irisCluster
+  })
+}
+
 
 // UPDATE one iris
 export const updateOneIris = iris => (dispatch, getState) => {

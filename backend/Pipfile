@@ -9,6 +9,8 @@ verify_ssl = true
 django = "==2.1"
 djangorestframework = "*"
 django-rest-knox = "*"
+scikit-learn = "*"
+numpy = "*"
 
 [requires]
 python_version = "3.7"

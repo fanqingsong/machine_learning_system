@@ -1,4 +1,4 @@
-import { GET_IRIS_DATA, DELETE_ONE_IRIS, SET_EDIT_IRIS, UPDATE_ONE_IRIS, ADD_ONE_IRIS, CLEAR_IRIS_DATA } from "../actions/types.js";
+import { GET_IRIS_DATA, DELETE_ONE_IRIS, SET_EDIT_IRIS, UPDATE_ONE_IRIS, ADD_ONE_IRIS, CLEAR_IRIS_DATA, SET_EDIT_IRIS_CLUSTER } from "../actions/types.js";
 
 const initialState = {
   iris: [],
@@ -8,7 +8,8 @@ const initialState = {
     petal_len: "",
     petal_width: "",
     category: ""
-  }
+  },
+  irisCluster: []
 };
 
 export default function (state = initialState, action) {
@@ -28,6 +29,13 @@ export default function (state = initialState, action) {
       return {
         ...state,
         editedIris: action.payload
+      };
+    case SET_EDIT_IRIS_CLUSTER:
+      console.log("in reducer SET_EDIT_IRIS_CLUSTER is called");
+      console.log(action.payload)
+      return {
+        ...state,
+        irisCluster: JSON.parse(action.payload)
       };
     case UPDATE_ONE_IRIS:
       return {
