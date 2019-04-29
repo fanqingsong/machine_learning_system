@@ -42,8 +42,14 @@ class IrisTrain(APIView):
 
     def post(self, request, format=None):
         print("--------------- IrisTrain post --------")
+        print(request.data)
 
-        model = KMeans(n_clusters=2)
+        n_clusters = request.data["cluster_number"]
+        n_clusters = int(n_clusters)
+
+        print("n_cluster=%d" % n_clusters)
+
+        model = KMeans(n_clusters=n_clusters)
 
         irisObjects = Iris.objects.all()
 

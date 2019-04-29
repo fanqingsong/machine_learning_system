@@ -35,7 +35,7 @@ export default function (state = initialState, action) {
       console.log(action.payload)
       return {
         ...state,
-        irisCluster: JSON.parse(action.payload)
+        irisCluster: action.payload
       };
     case UPDATE_ONE_IRIS:
       return {
