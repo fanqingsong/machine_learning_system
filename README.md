@@ -75,13 +75,13 @@ pipenv run python manage.py runserver
 
 ## snapshot
 
-login page
+### login page
 ![avatar](./snapshot/loginpage.png)
 
-model train page
+### model train page
 ![avatar](./snapshot/train.png)
 
-prediction page
+### prediction page
 ![avatar](./snapshot/predict.png)
 
 
