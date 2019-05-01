@@ -10,7 +10,7 @@ Then I add Machine Learning features for demostrate the full workflow of the dat
 3. model train
 4. prediction
 
-The data set is the classic iris data, which is only for demo, and this project is from my interest. so you can reference, but the quality is not assrued.
+The data set is the classic iris data, which is only for demo, and this project is from my interest. so you can reference, but the quality is not assured.
 
 ## features
 
@@ -72,3 +72,16 @@ pipenv install
 pipenv run python manage.py runserver
 
 ```
+
+## snapshot
+
+login page
+![avatar](./snapshot/loginpage.png)
+
+model train page
+![avatar](./snapshot/train.png)
+
+prediction page
+![avatar](./snapshot/predict.png)
+
+
