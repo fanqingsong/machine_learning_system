@@ -6,6 +6,7 @@ from rest_framework import status
 from .serializers import IrisSerializer
 
 from sklearn.cluster import KMeans
+from sklearn.externals import joblib
 
 import json
 import numpy
@@ -61,6 +62,12 @@ class IrisTrain(APIView):
 
         model.fit(irisDataTrain)
 
+        # save model for prediction
+        joblib.dump(model, 'model.kmeans')
+
+        # test saved prediction
+        model = joblib.load('model.kmeans')
+
         # cluster result
         labels = model.predict(irisDataTrain)
 
@@ -88,4 +95,53 @@ class IrisTrain(APIView):
         #respData = "ok"
 
         return Response(respData, status=status.HTTP_201_CREATED)
+
+
+class IrisPredict(APIView):
+    """
+    predict iris cluster
+    """
+    def post(self, request, format=None):
+        print("--------------- IrisPredict post --------")
+        print(request.data)
+
+        sepal_len = request.data["sepal_len"]
+        sepal_width = request.data["sepal_width"]
+        petal_len = request.data["petal_len"]
+        petal_width = request.data["petal_width"]
+
+        print("sepal_len=%s" % sepal_len)
+
+
+        irisDataTrain = [[sepal_len, sepal_width, petal_len, petal_width]]
+
+        # test data
+        print("delgation data print")
+        print(irisDataTrain[0])
+
+        # test saved prediction
+        model = joblib.load('model.kmeans')
+
+        # cluster result
+        labels = model.predict(irisDataTrain)
+
+        print("cluster result")
+        print(labels)
+
+        print("========================")
+
+        # transfer data to client
+        irisDataPredict = {
+            "predicted_cluster": labels[0]
+        }
+
+        print(irisDataPredict["predicted_cluster"])
+
+        respData = json.dumps(irisDataPredict, cls=MyEncoder)
+
+        return Response(respData, status=status.HTTP_201_CREATED)
+
+
+
+
 
