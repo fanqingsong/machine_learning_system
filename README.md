@@ -66,6 +66,7 @@ npm run build
 
 # Install dependencies
 cd ../backend
+pip3 install pipenv
 pipenv install
 
 # Serve API on localhost:8000
