@@ -72,6 +72,19 @@ pipenv install
 # Serve API on localhost:8000
 pipenv run python manage.py runserver
 
+# or run on wsgi server(uwsgi)
+pipenv run uwsgi --http :9090 --wsgi-file config/wsgi.py --check-static ../frontend/dist/
+
+# or run on nginx + uwsgi
+apt update
+apt install nginx
+
+pipenv run uwsgi --socket :9090 --wsgi-file config/wsgi.py
+
+cp -f ./config/default /etc/nginx/sites-available/default
+cp -f ./config/nginx.conf /etc/nginx/nginx.conf
+nginx&
+
 ```
 
 ## snapshot
