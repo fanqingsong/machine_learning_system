@@ -71,11 +71,25 @@ pipenv install
 
 # Serve API on localhost:8000
 pipenv run python manage.py runserver
+```
 
-# or run on wsgi server(uwsgi)
+### deploy on production environment
+
+#### run on wsgi server(uwsgi)
+
+```
 pipenv run uwsgi --http :9090 --wsgi-file config/wsgi.py --check-static ../frontend/dist/
+```
 
-# or run on nginx + uwsgi
+#### run on nginx + uwsgi
+
+there are two points needed to modified:
+(1) the root path of default file
+root /root/win10/mine/machine_learning_system/frontend/dist/;
+(2) the user role of nginx.conf file
+user root;
+
+```
 apt update
 apt install nginx
 
