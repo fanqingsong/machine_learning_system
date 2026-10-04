@@ -1,8 +1,8 @@
 # Machine Learning System
 
-A small full-stack data product that walks through one mining loop: manage records, explore them, train a model, and predict. The dataset is the classic Iris set, and the model is scikit-learn K-Means. The point of the project is the product path, not a new algorithm.
+Full-stack demo of a data-product loop: manage Iris records, explore them, train a K-Means model, and predict with Django REST and React.
 
-Register an account, then move through four pages. Each page calls a Django REST API. Training writes a `model.kmeans` file; prediction reads that file back.
+The dataset is the classic Iris set. The point of the project is the product path, not a new algorithm. Register an account, then move through four pages. Each page calls a Django REST API. Training writes a `model.kmeans` file; prediction reads that file back.
 
 ## Screenshots
 
